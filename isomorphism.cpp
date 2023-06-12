@@ -9,11 +9,9 @@ bool isIsomorphic(const std::vector<int>& degrees1, const std::vector<int>& degr
     if (degrees1.size() != degrees2.size())
         return false;
 
-    int n = degrees1.size();
-
     // Calculate the number of edges for each graph
     int edges1 = 0, edges2 = 0;
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < degrees1.size(); i++)
     {
         edges1 += degrees1[i];
         edges2 += degrees2[i];
@@ -25,7 +23,7 @@ bool isIsomorphic(const std::vector<int>& degrees1, const std::vector<int>& degr
 
     // Create maps to store the frequency of degrees
     std::map<int, int> freq1, freq2;
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < degrees1.size(); i++)
     {
         freq1[degrees1[i]]++;
         freq2[degrees2[i]]++;
